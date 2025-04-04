@@ -100,12 +100,7 @@
 \ Example usage:
 \   3 cubed .   -> prints 27
 : cubed ( n -- n^3 )
-  \ TODO: fill in the code. One approach:
-  \   dup dup * *
-  \ or  dup dup * swap *   (there are multiple ways)
-  \ Replace what's below with actual code:
-." no solution "
-  cr
+  dup dup * *
 ;
 
 \ Task 1: Define a word is-less? ( n1 n2 -- )
@@ -115,7 +110,11 @@
 \   1 2 is-less?   -> prints YES
 \   2 1 is-less?   -> prints NO
 : is-less? ( n1 n2 -- )
-." no solution "
+  < if 
+   ." YES"
+  else 
+   ." NO"
+  then
   cr
 ;
 
@@ -125,8 +124,7 @@
 \   5 my-negate .  -> prints -5
 \   -3 my-negate . -> prints 3
 : my-negate ( n -- -n )
-." no solution "
-  cr
+  negate
 ;
 
 \ ----------------------------------------------------------
@@ -150,7 +148,7 @@
   \ HINT:
   \   You can rearrange the stack and call 'squared' twice,
   \   then add the results.
-." no solution "
+  dup * swap dup * +
 ;
 
 \ ----------------------------------------------------------
@@ -168,8 +166,7 @@
 
 : square-of-sum
 \ ( a b -- (a+b)^2 )
-." no solution "
-  cr
+  + squared
 ;
 
 \ ----------------------------------------------------------
